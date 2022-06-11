@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.saned.beauty-user</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>أزرع</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict/>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>CaptureKeyboardInput</key>
+	<true/>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<true/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>example.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need the access to the photo library to create and store snapshots of user interface</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>By access to your location,we can deliver orders to you</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>By access to your location,we can deliver orders to you</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>allow to use microphone permission for record and upload videos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need the access to the photo library to create and store snapshots of user interface</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>allow Beauty to upload pictures to upload profile pictures</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Tajawal-Medium.ttf</string>
+		<string>Tajawal-Bold.ttf</string>
+		<string>Tajawal-Regular.ttf</string>
+		<string>Montserrat-Bold.otf</string>
+		<string>Montserrat-Regular.otf</string>
+		<string>Cairo-Regulat.ttf</string>
+		<string>Cairo-Bold.ttf</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Auth</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+</dict>
+</plist>

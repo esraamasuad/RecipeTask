@@ -36,6 +36,7 @@
 		045B4F29285604A600304084 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F28285604A600304084 /* SearchItem.swift */; };
 		045F5CB1253342010088A445 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F5CB0253342010088A445 /* CollectionViewExtension.swift */; };
 		045F5CB825334D4A0088A445 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045F5CB725334D4A0088A445 /* ColorAssets.xcassets */; };
+		0460B87F28562D7500D09FCA /* emptyResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 0460B87E28562D7500D09FCA /* emptyResult.json */; };
 		04723DD625A10C580053E73B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04723DD525A10C580053E73B /* AppConstants.swift */; };
 		04DDE3B02588FFFF00841D9A /* PreferanceExplorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDE3AF2588FFFF00841D9A /* PreferanceExplorer.swift */; };
 		1E21592324B93B3600511554 /* SignInEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E21592224B93B3600511554 /* SignInEndpoint.swift */; };
@@ -134,6 +135,7 @@
 		045B4F28285604A600304084 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		045F5CB0253342010088A445 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		045F5CB725334D4A0088A445 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		0460B87E28562D7500D09FCA /* emptyResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyResult.json; sourceTree = "<group>"; };
 		04723DD525A10C580053E73B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		04DDE3AF2588FFFF00841D9A /* PreferanceExplorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferanceExplorer.swift; sourceTree = "<group>"; };
 		1E21592224B93B3600511554 /* SignInEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEndpoint.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				1EB5D91A24A9D446003E8F4F /* LaunchScreen.storyboard */,
+				0460B87E28562D7500D09FCA /* emptyResult.json */,
 				B2C0D1452802253B0012014A /* Assets.xcassets */,
 				045F5CB725334D4A0088A445 /* ColorAssets.xcassets */,
 				1EB5D91124A9D445003E8F4F /* SceneDelegate.swift */,
@@ -713,6 +716,7 @@
 				B21C5530253CE03D007B65CB /* Cairo-Bold.ttf in Resources */,
 				B21C5533253CE044007B65CB /* Cairo-Regular.ttf in Resources */,
 				045B4F012855228700304084 /* Search.storyboard in Resources */,
+				0460B87F28562D7500D09FCA /* emptyResult.json in Resources */,
 				045F5CB825334D4A0088A445 /* ColorAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

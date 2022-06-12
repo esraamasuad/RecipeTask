@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class SearchView: BaseView<SearchVM, BaseItem> {
     let searchCellIdintifier = String(describing: SearchListTableViewCell.self)
@@ -25,12 +26,14 @@ class SearchView: BaseView<SearchVM, BaseItem> {
         didSet {
             self.searchTableView.registerCell(idintifier: searchCellIdintifier)
             self.searchTableView.registerCell(idintifier: loadingCellIdintifier)
-            self.searchTableView.rowHeight = 110
+            self.searchTableView.rowHeight = 90
         }
     }
     
+    @IBOutlet  var animatedImageView: AnimationView!
+    @IBOutlet weak var emptyView: UIView!
+
     lazy var searchController = UISearchController(searchResultsController: nil)
-    var timer: Timer!
     
     override func bindind() {
         viewModel = SearchVM(routingManeger: RouterManagerImpl(self))
@@ -39,10 +42,8 @@ class SearchView: BaseView<SearchVM, BaseItem> {
         }
         viewModel.recipesList.bind { (list) in
             self.refreshControl.endRefreshing()
-            //            self.searchTableView.removeNoDataPlaceholder()
-            //            if list.count == 0 {
-            //                self.searchTableView.setNoDataPlaceholder()
-            //            }
+            self.searchTableView.isHidden = list.isEmpty
+            if list.isEmpty {self.addAnimation()}
             self.searchTableView.reloadData()
         }
         initRefreshController() //add pull to refresh
@@ -55,8 +56,12 @@ class SearchView: BaseView<SearchVM, BaseItem> {
         buildSearchBar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        searchController.searchBar.becomeFirstResponder()
+    }
+    
     private func buildSearchBar() {
-        // TODO: Search for how to put search bar beside back button.
         self.extendedLayoutIncludesOpaqueBars = true
         searchController.obscuresBackgroundDuringPresentation = false
         self.definesPresentationContext = true
@@ -66,22 +71,26 @@ class SearchView: BaseView<SearchVM, BaseItem> {
         self.searchController.searchBar.backgroundImage = UIImage()
         searchController.isActive = true
         searchController.searchBar.searchBarStyle = .minimal
-        //   searchController.searchBar.showsBookmarkButton = true
-        // searchController.searchBar.setImage(UIImage(named: "filter")!, for: .bookmark, state: .normal)
+   
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
         if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
             textfield.backgroundColor = UIColor.white
             viewModel.searchText.bidirectionalBind(to: textfield.reactive.text)
-            //  textfield.font = UIFont(name: "Cairo-Regular", size: 14)!
             textfield.textColor = UIColor.darkGray
-            //  textfield.placeholder = ""
-            textfield.becomeFirstResponder()
+            textfield.keyboardType = .asciiCapable
         }
         searchController.searchBar.setValue("cancel".localize(), forKey: "cancelButtonText")
     }
     
+    fileprivate func addAnimation() {
+        animatedImageView.backgroundColor = UIColor.clear
+        animatedImageView.contentMode = .scaleAspectFit
+        animatedImageView.loopMode = .loop
+        animatedImageView.play()
+    }
+
     func initRefreshController() {
         if #available(iOS 10.0, *) {
             searchTableView.refreshControl = refreshControl
@@ -94,12 +103,6 @@ class SearchView: BaseView<SearchVM, BaseItem> {
     @objc private func pullToRefresh(_ sender: Any) {
         viewModel.pullToRefresh.value = true
         viewModel.reloadData()
-    }
-}
-
-//MARK: - Actions -
-extension SearchView{
-    @IBAction func filterAction(_ sender: UIButton) {
     }
 }
 
@@ -117,14 +120,9 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.selectNewFilter(indexPath.row)
+        viewModel.reloadData(indexPath.row)
     }
     
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        let w = (collectionView.frame.width/2)-10
-    //        return CGSize(width: w, height: w+50)
-    //    }
-    //
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
@@ -133,14 +131,25 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate, UICo
 // MARK: - Table Delegate -
 extension SearchView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  viewModel.recipesList.value.count
+        return  viewModel.recipesList.value.count + (viewModel.hasMorePagination ? 1 : 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if viewModel.hasMorePagination && (indexPath.row >= viewModel.recipesList.value.count){
+            let  cell = tableView.dequeueReusableCell(withIdentifier: loadingCellIdintifier, for: indexPath) as! LoadingTableViewCell
+            cell.loading.startAnimating()
+            return cell
+        }
         let  cell = tableView.dequeueReusableCell(withIdentifier: searchCellIdintifier, for: indexPath) as! SearchListTableViewCell
         let recipeItem = viewModel.recipesList.value[indexPath.row].recipe
         cell.configure(recipeItem)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if viewModel.hasMorePagination && (indexPath.row >= viewModel.recipesList.value.count) && !viewModel.isLoadigPagination{
+            viewModel.searchEndPoint()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -150,41 +159,23 @@ extension SearchView: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: - serach delegate -
 extension SearchView: UISearchBarDelegate,UISearchResultsUpdating {
-    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.openFilter()
-    }
-    
     func updateSearchResults(for searchController: UISearchController) {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.searchEndPoint()
+        viewModel.reSearchData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        // applySearchOnViews(searchQuery: "")
+        viewModel.cancel()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // startTimer(searchQuery: searchText)
     }
     
-    private func startTimer(searchQuery: String) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ApplySearch), userInfo: ["SearchQuery": searchQuery], repeats: false)
-    }
-    
-    @objc private func ApplySearch() {
-        //        if  let userInfo = timer.userInfo as? [String: String],
-        //            let searchQuery = userInfo["SearchQuery"] {
-        //          //  applySearchOnViews(searchQuery: searchQuery)
-        //        }
-    }
-    
-    private func applySearchOnViews(searchQuery: String) {
-        view.endEditing(true)
-        viewModel.pullToRefresh.value = true
-        viewModel.searchText.value = searchQuery
-        viewModel.reloadData()
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if searchBar.text?.isEmpty ?? true {
+            viewModel.cancel()
+        }
     }
 }

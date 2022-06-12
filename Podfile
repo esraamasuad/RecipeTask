@@ -17,5 +17,6 @@ target 'RecipeSearch' do
   pod 'SkeletonView', '= 1.8.2' 
   pod 'FCAlertView'
   pod 'ViewAnimator'
-  
+  pod 'lottie-ios'
+
 end

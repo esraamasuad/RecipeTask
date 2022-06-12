@@ -17,6 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scx-1P-3YR">
+                                <rect key="frame" x="0.0" y="153" width="414" height="709"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-Xw-yIg" userLabel="emptyImage" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="82" y="229.5" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="K8V-w2-Ok7"/>
+                                            <constraint firstAttribute="height" constant="250" id="kGt-Vf-JUP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="emptyResult"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no search result!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di1-3J-9gV">
+                                        <rect key="frame" x="20" y="489.5" width="374" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="assetColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ehR-Xw-yIg" firstAttribute="centerY" secondItem="Scx-1P-3YR" secondAttribute="centerY" id="4YD-S2-OD1"/>
+                                    <constraint firstAttribute="trailing" secondItem="di1-3J-9gV" secondAttribute="trailing" constant="20" id="Gf5-TB-97Q"/>
+                                    <constraint firstItem="ehR-Xw-yIg" firstAttribute="centerX" secondItem="Scx-1P-3YR" secondAttribute="centerX" id="Yrp-qn-Gde"/>
+                                    <constraint firstItem="di1-3J-9gV" firstAttribute="top" secondItem="ehR-Xw-yIg" secondAttribute="bottom" constant="10" id="tsY-Zx-ReL"/>
+                                    <constraint firstItem="di1-3J-9gV" firstAttribute="leading" secondItem="Scx-1P-3YR" secondAttribute="leading" constant="20" id="zhD-QA-sps"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="in2-yZ-DTz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,16 +76,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="in2-yZ-DTz" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="2jj-nS-Xku"/>
+                            <constraint firstItem="Scx-1P-3YR" firstAttribute="top" secondItem="in2-yZ-DTz" secondAttribute="bottom" constant="15" id="8ya-js-C6N"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Scx-1P-3YR" secondAttribute="bottom" id="AWx-xh-v3U"/>
+                            <constraint firstItem="Scx-1P-3YR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OS6-NQ-RXv"/>
                             <constraint firstAttribute="trailing" secondItem="in2-yZ-DTz" secondAttribute="trailing" id="XmG-X9-fza"/>
                             <constraint firstItem="in2-yZ-DTz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fOh-me-TkR"/>
                             <constraint firstItem="Vaj-tf-mbv" firstAttribute="top" secondItem="in2-yZ-DTz" secondAttribute="bottom" constant="15" id="hFy-0v-cPT"/>
                             <constraint firstItem="Vaj-tf-mbv" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="hq7-jQ-PDl"/>
                             <constraint firstAttribute="bottom" secondItem="Vaj-tf-mbv" secondAttribute="bottom" id="sy3-yi-fsj"/>
                             <constraint firstItem="Vaj-tf-mbv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xjP-kt-Fgh"/>
+                            <constraint firstItem="Scx-1P-3YR" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="y2F-fr-FdS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RqG-Ng-3ho"/>
                     <connections>
+                        <outlet property="animatedImageView" destination="ehR-Xw-yIg" id="hgd-rV-Fwr"/>
+                        <outlet property="emptyView" destination="Scx-1P-3YR" id="HsB-pa-qXn"/>
                         <outlet property="filterCollectionView" destination="in2-yZ-DTz" id="C5v-Zq-exl"/>
                         <outlet property="searchTableView" destination="Vaj-tf-mbv" id="t9J-Nq-UYG"/>
                     </connections>
@@ -121,6 +155,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zik-DH-ZGp"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Recipe Website">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -148,7 +183,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uIm-VJ-iZf">
                         <barButtonItem key="rightBarButtonItem" title="Share" id="pnn-ru-wEX">
-                            <color key="tintColor" name="assetColor"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="shareUrlAction:" destination="lse-7x-xEb" id="gFB-4M-nY8"/>
                             </connections>
@@ -219,9 +254,12 @@
             <point key="canvasLocation" x="2063.768115942029" y="66.964285714285708"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ehR-Xw-yIg"/>
+    </designables>
     <resources>
         <namedColor name="assetColor">
-            <color red="0.41414600610000002" green="0.79957008360000004" blue="0.001268654363" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.414000004529953" green="0.80000001192092896" blue="0.0010000000474974513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

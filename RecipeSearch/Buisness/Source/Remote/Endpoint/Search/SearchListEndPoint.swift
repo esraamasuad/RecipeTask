@@ -18,12 +18,12 @@ struct SearchListEndPoint: Endpoint {
     var headers: [String: String] = [:]
 
     init(searchRequest: SearchRequest) {
-        urlPrefix = urlPrefix + "?q=\(searchRequest.search)&app_id=\(AppConstatnts.appID)&app_key=\(AppConstatnts.appKEY)"
-//        parameters["q"] = searchRequest.search
-//        parameters["from"] = searchRequest.from
-//        parameters["health"] = searchRequest.filter
-//        parameters["app_id"] = AppConstatnts.appID
-//        parameters["app_key"] = AppConstatnts.appKEY
+      //  urlPrefix = urlPrefix + "?q=\(searchRequest.search)&app_id=\(AppConstatnts.appID)&app_key=\(AppConstatnts.appKEY)"
+        parameters["q"] = searchRequest.search
+        parameters["from"] = searchRequest.from
+        parameters["health"] = searchRequest.filter
+        parameters["app_id"] = AppConstatnts.appID
+        parameters["app_key"] = AppConstatnts.appKEY
     }
 }
 

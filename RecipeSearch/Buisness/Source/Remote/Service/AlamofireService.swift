@@ -150,7 +150,7 @@ class AlamofireService: EndpointExecuter {
             headers.updateValue(value, forKey: key)
             
         }
-        return headers
+        return [:] // headers
     }
 
     private func uploadFileNotificationCenter(progress: Int){

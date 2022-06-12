@@ -10,5 +10,10 @@ import Foundation
 
 struct BaseResponse<T: Codable>: Codable {
     let message: String?
-    let data: T?
+    var q: String?
+    var from: Int?
+    var to: Int?
+    var more: Bool?
+    var count: Int?
+    let hits: T?
 }

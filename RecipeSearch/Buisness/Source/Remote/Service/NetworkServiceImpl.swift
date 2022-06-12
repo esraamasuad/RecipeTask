@@ -30,7 +30,7 @@ class NetworkServiceImpl: NetworkService {
             self.call(endpoint: endpoint)
                 .then({ (data) in
                     do {
-                    //  print("Response Data 🤪🤪🤪🤪  \(JSON(data))")
+                      print("Response Data 🤪🤪🤪🤪  \(JSON(data))")
                         let obj = try JSONDecoder().decode(Model.self, from: data)
                         fulfill(obj)
                     } catch let jsonError {
@@ -101,7 +101,7 @@ class NetworkServiceImpl: NetworkService {
                 })
         }
     }
-    
+    //
     private func networkSuccess(data: Data, statusCode: Int?) -> Promise<Data> {
         return Promise<Data>(on: .main) { fulfill, reject in
             print("⬆️⬆️ Status Code : \(String(describing: statusCode ?? 0))")
@@ -115,10 +115,6 @@ class NetworkServiceImpl: NetworkService {
                     return
                 }
                 reject(error)
-                if  statusCode == 401 {
-                    UserRepoImpl().localLogOut()
-                    StartScreenRoute().routeToLogin()
-                }
             }
         }
     }

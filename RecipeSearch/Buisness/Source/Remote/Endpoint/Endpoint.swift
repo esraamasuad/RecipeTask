@@ -39,28 +39,16 @@ enum EndpointMethod: String {
 
 enum EndpointService: String {
   
+    // search
+    case searchList = "search"
+    
     //auth
     case signIn = "login"
     case signUp = "register"
     case signOut = "logout"
-    
-    // order
    
-    // user servises
-   
-    // Home
-   
-    //user
-    
-    //Driver
-    
-    //Settings
-   
-    //general
-
-    
      var url: String {
-        return "https://www.\(self.rawValue)"
+        return "https://api.edamam.com/\(self.rawValue)"
     }
 }
 

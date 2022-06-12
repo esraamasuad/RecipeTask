@@ -13,7 +13,7 @@ struct SearchListEndPoint: Endpoint {
     var service: EndpointService = .searchList
     var method: EndpointMethod = .get
     var encoding: EndpointEncoding = .query
-    var auth: AuthorizationHandler = NoneAuthorizationHandler()
+//    var auth: AuthorizationHandler = NoneAuthorizationHandler()
     var parameters: [String: Any] = [:]
     var headers: [String: String] = [:]
 

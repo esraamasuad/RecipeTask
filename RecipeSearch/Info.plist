@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BGTaskSchedulerPermittedIdentifiers</key>
-	<array>
-		<string>com.saned.beauty-user</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -22,10 +18,6 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict/>
-	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>CaptureKeyboardInput</key>
@@ -49,18 +41,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>We need the access to the photo library to create and store snapshots of user interface</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>By access to your location,we can deliver orders to you</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>By access to your location,we can deliver orders to you</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>allow to use microphone permission for record and upload videos</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need the access to the photo library to create and store snapshots of user interface</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>allow Beauty to upload pictures to upload profile pictures</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Tajawal-Medium.ttf</string>

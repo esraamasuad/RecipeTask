@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let winScene = (scene as? UIWindowScene) else { return }
         SceneDelegate.window = UIWindow(windowScene: winScene)
-        StartScreenRoute(window: SceneDelegate.window).routeToSplash()
     }
 
 

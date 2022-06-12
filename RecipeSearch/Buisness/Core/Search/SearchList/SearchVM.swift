@@ -45,6 +45,7 @@ class SearchVM: BaseVM {
     }
     
     func cancel(){
+        searchText.value = ""
         recipesList.value.removeAll()
     }
     

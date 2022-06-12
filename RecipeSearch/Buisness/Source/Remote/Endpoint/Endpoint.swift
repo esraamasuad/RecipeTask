@@ -13,7 +13,7 @@ protocol Endpoint {
     var urlPrefix: String {get set}
    // var endpointVersion: Versions {get set}
     var method: EndpointMethod {get set}
-    var auth: AuthorizationHandler {get set}
+//    var auth: AuthorizationHandler {get set}
     var parameters: [String: Any] {get set}
     var encoding: EndpointEncoding {get set}
     var headers: [String: String] {get set}
@@ -25,11 +25,6 @@ enum EndpointEncoding {
     case query
 }
 
-//enum Versions: String {
-//    case version1 = "v1"
-//    case version2 = "v2"
-//}
-
 enum EndpointMethod: String {
     case get
     case post
@@ -38,15 +33,9 @@ enum EndpointMethod: String {
 }
 
 enum EndpointService: String {
-  
     // search
     case searchList = "search"
-    
-    //auth
-    case signIn = "login"
-    case signUp = "register"
-    case signOut = "logout"
-   
+
      var url: String {
         return "https://api.edamam.com/\(self.rawValue)"
     }

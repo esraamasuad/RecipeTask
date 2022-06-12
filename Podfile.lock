@@ -11,6 +11,7 @@ PODS:
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
+  - lottie-ios (3.3.0)
   - MXParallaxHeader (1.1.0)
   - PromisesObjC (1.2.12)
   - PromisesSwift (1.2.12):
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - JGProgressHUD (~> 2.1)
   - KeychainSwift (~> 19.0.0)
   - Kingfisher (~> 5.13.0)
+  - lottie-ios
   - MXParallaxHeader
   - PromisesSwift (~> 1.2.8)
   - ReachabilitySwift (~> 4.3.0)
@@ -50,6 +52,7 @@ SPEC REPOS:
     - JGProgressHUD
     - KeychainSwift
     - Kingfisher
+    - lottie-ios
     - MXParallaxHeader
     - PromisesObjC
     - PromisesSwift
@@ -69,6 +72,7 @@ SPEC CHECKSUMS:
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   MXParallaxHeader: de3c867e10ba46e8f6e20c8ee1f2a910372b3b94
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   PromisesSwift: 64085cf6e5fc1b5001f90cf31e87a1f1621fefee
@@ -79,6 +83,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
 
-PODFILE CHECKSUM: 1028b721db50d4cb1f8161b43d311f8373bc7da6
+PODFILE CHECKSUM: c65a490e23c0cd4ab134de24212c61062a30daca
 
 COCOAPODS: 1.11.3

@@ -13,7 +13,6 @@ protocol RouterManager {
     func push<Presenter: BaseVM, Item: BaseItem>(view: View, presenter: Presenter.Type, item: Item )
     func present<Presenter: BaseVM, Item: BaseItem>(view: View, presenter: Presenter.Type, item: Item)
     func present(vc: UIViewController)
-    //   func presentBottomSheet<Presenter: BaseVM, Item: BaseItem>(view: View, presenter: Presenter.Type, item: Item)
     func presentFullScreen<Presenter: BaseVM, Item: BaseItem>(view: View, presenter: Presenter.Type, item: Item)
     func pushNotPresenterController<ViewController: UIViewController>(view: View, controller: ViewController.Type)
     func routeToInitialController<ViewController: UIViewController>(view: View, controller: ViewController.Type)

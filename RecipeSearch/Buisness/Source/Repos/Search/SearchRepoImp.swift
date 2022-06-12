@@ -11,11 +11,9 @@ import Promises
 class SearchRepoImp: SearchRepo {
     
     private var network: NetworkService
-    private var localData: LocalData
     
-    init(network: NetworkService = NetworkServiceImpl(), localData: LocalData = LocalDataImpl()) {
+    init(network: NetworkService = NetworkServiceImpl()) {
         self.network = network
-        self.localData = localData
     }
     
     func searchList(searchRequest: SearchRequest) -> Promise<BaseResponse<[HitModel]>> {

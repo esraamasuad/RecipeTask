@@ -64,7 +64,6 @@ class BaseVM {
         }
 
         alert.addButton(LocalizedWorlds.yes.localize) {
-            StartScreenRoute().routeToLogin()
         }
 
         alert.titleFont = UIFont(name: LocalizedWorlds.AppRegularFont.localize, size: 14)

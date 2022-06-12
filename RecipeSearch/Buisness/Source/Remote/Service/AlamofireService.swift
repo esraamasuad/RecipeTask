@@ -106,7 +106,7 @@ class AlamofireService: EndpointExecuter {
                 if key == "photo" || key == "image" || key == "car_license_image" || key == "driver_license_image" || key == "commercial_image"{
                     let image = value as! Data
                     let item = MultiPartModel(data: image ,
-                                              fileName: "file\(Date().getCurrentSecond()).png",
+                                              fileName: "file.png",
                                               mimeType: "png",
                                               keyName: key)
                     MultipartFormData.append(item.data, withName: key, fileName: item.fileName, mimeType: item.mimeType)
@@ -114,7 +114,7 @@ class AlamofireService: EndpointExecuter {
                 else if key == "profile_img" || key == "images" || key == "id_national_back_img" {
                     for image in value as! [Data] {
                         let item = MultiPartModel(data: image ,
-                                                  fileName: "file\(Date().getCurrentSecond()).png",
+                                                  fileName: "file.png",
                                                   mimeType: "png",
                                                   keyName: key)
                         MultipartFormData.append(item.data, withName: "\(item.keyName)[]", fileName: item.fileName, mimeType: item.mimeType)
@@ -140,16 +140,7 @@ class AlamofireService: EndpointExecuter {
         var headers = endpoint.headers.filter{$0.value != ""}
         headers.updateValue(Localization.currentAppleLanguage(), forKey: "Accept-Language")
         headers.updateValue(Localization.currentAppleLanguage(), forKey: "language")
-        headers.updateValue("application/json", forKey: "Content-Type")
-      
-        for (key, value) in endpoint.auth.tokenHeader {
-            headers.updateValue(value, forKey: key)
-            
-        }
-        for (key, value) in UserAuthoriationHandler().clientHeader {
-            headers.updateValue(value, forKey: key)
-            
-        }
+        headers.updateValue("application/json", forKey: "Content-Type")      
         return [:] // headers
     }
 

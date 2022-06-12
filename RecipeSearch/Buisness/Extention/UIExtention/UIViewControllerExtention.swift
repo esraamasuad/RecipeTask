@@ -15,7 +15,7 @@ extension UIViewController {
             let appearance = UINavigationBarAppearance()
             isTranslucent == true ? appearance.configureWithTransparentBackground() : appearance.configureWithDefaultBackground()
             appearance.backgroundColor = isTranslucent == true ?.clear : barColor
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.black,.font : UIFont(name: "AppRegularFont".localize(), size: 16)!]
+           // appearance.titleTextAttributes = [.foregroundColor: UIColor.black,.font : UIFont(name: "AppRegularFont".localize(), size: 16)!]
             appearance.shadowColor = .clear
             self.navigationItem.title = title
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
@@ -31,8 +31,8 @@ extension UIViewController {
             //                    self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back_arrow")!
             self.navigationItem.title = title
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AppRegularFont".localize(), size: 14)!,
-                                                                            NSAttributedString.Key.foregroundColor: UIColor.black]
+//           // self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "AppRegularFont".localize(), size: 14)!,
+//                                                                            NSAttributedString.Key.foregroundColor: UIColor.black]
         }
         
         

@@ -38,14 +38,6 @@ class NetworkServiceImpl: NetworkService {
                         print("JsonSerlization Error 😱😱😱😱😱 \(jsonError.localizedDescription)")
                         reject(FailToMapResponseError(data: data))
                     }
-
-//                    guard let response = try? JSONDecoder().decode(Model.self, from: data) else {
-//                        reject(FailToMapResponseError(data: data))
-//                        return
-//                    }
-//                    print("🎉🎉 After Codable : \(response)")
-//                    fulfill(response)
-                    
                 })
                 .catch({ (error) in
                     reject(error) })
@@ -120,8 +112,7 @@ class NetworkServiceImpl: NetworkService {
     }
     
     private func saveHeaders( _ header: HeaderResponse) {
-        UserAuthoriationHandler().setAuthManually(authToken: header.token ?? "")
-        UserAuthoriationHandler().setUidManually(uid: header.uid ?? "")    }
+        }
     private func networkFail() -> Error {
         return isConnectedToInternet ? FailToCallNetworkError() : NoInternetConnectionError()
     }

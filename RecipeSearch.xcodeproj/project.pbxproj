@@ -32,6 +32,8 @@
 		045F5CB1253342010088A445 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F5CB0253342010088A445 /* CollectionViewExtension.swift */; };
 		045F5CB825334D4A0088A445 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045F5CB725334D4A0088A445 /* ColorAssets.xcassets */; };
 		0460B87F28562D7500D09FCA /* emptyResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 0460B87E28562D7500D09FCA /* emptyResult.json */; };
+		0460B887285651A400D09FCA /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460B885285651A400D09FCA /* FilterCollectionViewCell.swift */; };
+		0460B888285651A400D09FCA /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0460B886285651A400D09FCA /* FilterCollectionViewCell.xib */; };
 		04723DD625A10C580053E73B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04723DD525A10C580053E73B /* AppConstants.swift */; };
 		1E4C12DC24AF855D002A2F71 /* UIExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C12DB24AF855D002A2F71 /* UIExtenstion.swift */; };
 		1E62D49324B0C7EE00AC2E94 /* SelfSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E62D49224B0C7EE00AC2E94 /* SelfSizingTableView.swift */; };
@@ -103,6 +105,8 @@
 		045F5CB0253342010088A445 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		045F5CB725334D4A0088A445 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		0460B87E28562D7500D09FCA /* emptyResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emptyResult.json; sourceTree = "<group>"; };
+		0460B885285651A400D09FCA /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		0460B886285651A400D09FCA /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		04723DD525A10C580053E73B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		1E4C12DB24AF855D002A2F71 /* UIExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtenstion.swift; sourceTree = "<group>"; };
 		1E62D49224B0C7EE00AC2E94 /* SelfSizingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingTableView.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		045B4F0C2855285800304084 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0460B8842856519300D09FCA /* Filter */,
 				045B4F0E285528A100304084 /* SearchFilter */,
 				045B4F0D2855288E00304084 /* SearchList */,
 				045B4F22285554FA00304084 /* Loading */,
@@ -277,6 +282,15 @@
 				045F5CB0253342010088A445 /* CollectionViewExtension.swift */,
 			);
 			path = CollectioView;
+			sourceTree = "<group>";
+		};
+		0460B8842856519300D09FCA /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				0460B885285651A400D09FCA /* FilterCollectionViewCell.swift */,
+				0460B886285651A400D09FCA /* FilterCollectionViewCell.xib */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		1274B895A55B83B6A27ECB58 /* Frameworks */ = {
@@ -568,6 +582,7 @@
 				B21C552F253CE035007B65CB /* Cairo-Black.ttf in Resources */,
 				B21C5532253CE042007B65CB /* Cairo-Light.ttf in Resources */,
 				045B4F262855555400304084 /* LoadingTableViewCell.xib in Resources */,
+				0460B888285651A400D09FCA /* FilterCollectionViewCell.xib in Resources */,
 				045B4F16285528D900304084 /* SearchListTableViewCell.xib in Resources */,
 				045B4F12285528C300304084 /* SearchFilterCollectionViewCell.xib in Resources */,
 				B21C5537253CE243007B65CB /* Montserrat-Bold.otf in Resources */,
@@ -664,6 +679,7 @@
 				1E6904FD24AE4C6A00EF9D69 /* ConstrainExtention.swift in Sources */,
 				045B4F15285528D900304084 /* SearchListTableViewCell.swift in Sources */,
 				1EB5D9E924A9DC4E003E8F4F /* NetworkServiceImpl.swift in Sources */,
+				0460B887285651A400D09FCA /* FilterCollectionViewCell.swift in Sources */,
 				1E4C12DC24AF855D002A2F71 /* UIExtenstion.swift in Sources */,
 				1EB5D96024A9D9E6003E8F4F /* AppColors.swift in Sources */,
 				045B4F09285522E100304084 /* SearchDetailsVM.swift in Sources */,

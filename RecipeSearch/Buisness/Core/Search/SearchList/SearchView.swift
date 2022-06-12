@@ -12,7 +12,7 @@ import Lottie
 class SearchView: BaseView<SearchVM, BaseItem> {
     let searchCellIdintifier = String(describing: SearchListTableViewCell.self)
     let loadingCellIdintifier = String(describing: LoadingTableViewCell.self)
-    let filterCellIdintifier = String(describing: SearchFilterCollectionViewCell.self)
+    let filterCellIdintifier = String(describing: FilterCollectionViewCell.self)
     
     private let refreshControl = UIRefreshControl()
     
@@ -113,7 +113,7 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: filterCellIdintifier, for: indexPath) as! SearchFilterCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: filterCellIdintifier, for: indexPath) as! FilterCollectionViewCell
         let filterItem = viewModel.filterList.value[indexPath.row]
         cell.configure(filterItem)
         return cell

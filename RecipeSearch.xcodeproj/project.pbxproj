@@ -18,8 +18,6 @@
 		045B4F05285522AA00304084 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F04285522AA00304084 /* SearchVM.swift */; };
 		045B4F07285522C400304084 /* SearchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F06285522C400304084 /* SearchDetailsView.swift */; };
 		045B4F09285522E100304084 /* SearchDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F08285522E100304084 /* SearchDetailsVM.swift */; };
-		045B4F11285528C300304084 /* SearchFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F0F285528C300304084 /* SearchFilterCollectionViewCell.swift */; };
-		045B4F12285528C300304084 /* SearchFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045B4F10285528C300304084 /* SearchFilterCollectionViewCell.xib */; };
 		045B4F15285528D900304084 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F13285528D900304084 /* SearchListTableViewCell.swift */; };
 		045B4F16285528D900304084 /* SearchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045B4F14285528D900304084 /* SearchListTableViewCell.xib */; };
 		045B4F192855309200304084 /* SearchListEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F182855309200304084 /* SearchListEndPoint.swift */; };
@@ -91,8 +89,6 @@
 		045B4F04285522AA00304084 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		045B4F06285522C400304084 /* SearchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsView.swift; sourceTree = "<group>"; };
 		045B4F08285522E100304084 /* SearchDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailsVM.swift; sourceTree = "<group>"; };
-		045B4F0F285528C300304084 /* SearchFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchFilterCollectionViewCell.swift; path = ../../../../../../../../../../../Documents/SearchFilterCollectionViewCell.swift; sourceTree = "<group>"; };
-		045B4F10285528C300304084 /* SearchFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchFilterCollectionViewCell.xib; path = ../../../../../../../../../../../Documents/SearchFilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		045B4F13285528D900304084 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
 		045B4F14285528D900304084 /* SearchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchListTableViewCell.xib; sourceTree = "<group>"; };
 		045B4F182855309200304084 /* SearchListEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListEndPoint.swift; sourceTree = "<group>"; };
@@ -210,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				0460B8842856519300D09FCA /* Filter */,
-				045B4F0E285528A100304084 /* SearchFilter */,
 				045B4F0D2855288E00304084 /* SearchList */,
 				045B4F22285554FA00304084 /* Loading */,
 			);
@@ -224,15 +219,6 @@
 				045B4F14285528D900304084 /* SearchListTableViewCell.xib */,
 			);
 			path = SearchList;
-			sourceTree = "<group>";
-		};
-		045B4F0E285528A100304084 /* SearchFilter */ = {
-			isa = PBXGroup;
-			children = (
-				045B4F0F285528C300304084 /* SearchFilterCollectionViewCell.swift */,
-				045B4F10285528C300304084 /* SearchFilterCollectionViewCell.xib */,
-			);
-			path = SearchFilter;
 			sourceTree = "<group>";
 		};
 		045B4F1728552AFF00304084 /* Search */ = {
@@ -584,7 +570,6 @@
 				045B4F262855555400304084 /* LoadingTableViewCell.xib in Resources */,
 				0460B888285651A400D09FCA /* FilterCollectionViewCell.xib in Resources */,
 				045B4F16285528D900304084 /* SearchListTableViewCell.xib in Resources */,
-				045B4F12285528C300304084 /* SearchFilterCollectionViewCell.xib in Resources */,
 				B21C5537253CE243007B65CB /* Montserrat-Bold.otf in Resources */,
 				B21C5538253CE243007B65CB /* Montserrat-Medium.otf in Resources */,
 				B21C5525253CDB95007B65CB /* Localizable.strings in Resources */,
@@ -651,7 +636,6 @@
 				045237C3257FA07600B10CD3 /* LocalizedWorlds.swift in Sources */,
 				045B4F192855309200304084 /* SearchListEndPoint.swift in Sources */,
 				045B4F1C2855335500304084 /* SearchRepo.swift in Sources */,
-				045B4F11285528C300304084 /* SearchFilterCollectionViewCell.swift in Sources */,
 				1EB5D9EA24A9DC4E003E8F4F /* AlamofireService.swift in Sources */,
 				045B4F07285522C400304084 /* SearchDetailsView.swift in Sources */,
 				045B4F252855555400304084 /* LoadingTableViewCell.swift in Sources */,
@@ -835,9 +819,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6WG88LC6B2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RecipeSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -860,9 +844,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6WG88LC6B2;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RecipeSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (

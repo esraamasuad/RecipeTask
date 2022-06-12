@@ -33,6 +33,7 @@
 		045B4F20285533E700304084 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F1F285533E700304084 /* SearchModel.swift */; };
 		045B4F252855555400304084 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F232855555400304084 /* LoadingTableViewCell.swift */; };
 		045B4F262855555400304084 /* LoadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045B4F242855555400304084 /* LoadingTableViewCell.xib */; };
+		045B4F29285604A600304084 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B4F28285604A600304084 /* SearchItem.swift */; };
 		045F5CB1253342010088A445 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045F5CB0253342010088A445 /* CollectionViewExtension.swift */; };
 		045F5CB825334D4A0088A445 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045F5CB725334D4A0088A445 /* ColorAssets.xcassets */; };
 		04723DD625A10C580053E73B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04723DD525A10C580053E73B /* AppConstants.swift */; };
@@ -130,6 +131,7 @@
 		045B4F1F285533E700304084 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		045B4F232855555400304084 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		045B4F242855555400304084 /* LoadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingTableViewCell.xib; sourceTree = "<group>"; };
+		045B4F28285604A600304084 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		045F5CB0253342010088A445 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		045F5CB725334D4A0088A445 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		04723DD525A10C580053E73B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -181,7 +183,6 @@
 		1EEDC82A24AD19E700C33D71 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		5317EFDBFF0DAFEE0FA9C3A8 /* Pods-RecipeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeSearch.release.xcconfig"; path = "Target Support Files/Pods-RecipeSearch/Pods-RecipeSearch.release.xcconfig"; sourceTree = "<group>"; };
 		A3F451A624FF9DD4003872FA /* UIImageExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtention.swift; sourceTree = "<group>"; };
-		B21C5524253CDB7E007B65CB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B21C5526253CDB95007B65CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B21C5528253CDB99007B65CB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B21C5529253CDD69007B65CB /* ViewsLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsLocalization.swift; sourceTree = "<group>"; };
@@ -251,6 +252,7 @@
 				045B4F0B2855285100304084 /* Item */,
 				045B4EFE2855215A00304084 /* SearchList */,
 				045B4EFF2855216500304084 /* SearchDetails */,
+				045B4F272856032A00304084 /* WebPreview */,
 				045B4F002855228700304084 /* Search.storyboard */,
 			);
 			path = Search;
@@ -259,6 +261,7 @@
 		045B4F0B2855285100304084 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				045B4F28285604A600304084 /* SearchItem.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -323,6 +326,13 @@
 				045B4F242855555400304084 /* LoadingTableViewCell.xib */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		045B4F272856032A00304084 /* WebPreview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebPreview;
 			sourceTree = "<group>";
 		};
 		045F5CAF253341DF0088A445 /* CollectioView */ = {
@@ -801,6 +811,7 @@
 				1EB5D9CE24A9DBC7003E8F4F /* UIViewControllerExtention.swift in Sources */,
 				1EB5D9E824A9DC4E003E8F4F /* NetworkService.swift in Sources */,
 				1EB5D9D524A9DBE4003E8F4F /* StartScreenRoutingHelper.swift in Sources */,
+				045B4F29285604A600304084 /* SearchItem.swift in Sources */,
 				1EB5D96224A9D9E6003E8F4F /* AppFonts.swift in Sources */,
 				A3F451A724FF9DD4003872FA /* UIImageExtention.swift in Sources */,
 				1EB5D96424A9DA0A003E8F4F /* UserDefaultHelper.swift in Sources */,
@@ -834,7 +845,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				1EB5D91B24A9D446003E8F4F /* Base */,
-				B21C5524253CDB7E007B65CB /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -972,11 +982,10 @@
 			baseConfigurationReference = D207222C1C868038E70F052B /* Pods-RecipeSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ezra3_ios/ezra3_ios.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6WG88LC6B2;
 				INFOPLIST_FILE = RecipeSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -998,11 +1007,10 @@
 			baseConfigurationReference = 5317EFDBFF0DAFEE0FA9C3A8 /* Pods-RecipeSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ezra3_ios/ezra3_ios.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6WG88LC6B2;
 				INFOPLIST_FILE = RecipeSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (

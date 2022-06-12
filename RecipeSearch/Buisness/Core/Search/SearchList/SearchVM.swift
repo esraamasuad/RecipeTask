@@ -36,8 +36,8 @@ class SearchVM: BaseVM {
     }
     
     func routeToRecipeDetails(_ index:Int){
-        let recipe = recipesList.value[index]
-        
+        let recipe = recipesList.value[index].recipe
+        routingManeger.push(view: .searchDetailsView, presenter: SearchDetailsVM.self, item: SearchItem(recipe))
     }
     
     func openFilter() {

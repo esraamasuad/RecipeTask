@@ -16,11 +16,12 @@ enum Storyboard: String {
 }
 
 enum View: String {
-   case searchView = "SearchView"
-
+    case searchView = "SearchView"
+    case searchDetailsView = "SearchDetailsView"
+    
     var storyboard: Storyboard {
         switch self {
-        case .searchView:
+        case .searchView, .searchDetailsView:
             return .search
         }
     }
@@ -66,8 +67,8 @@ class RouterManagerImpl: RouterManager {
         viewController.modalPresentationStyle = .automatic
         currentViewController.present(viewController, animated: true)
     }
-
-  
+    
+    
     func presentFullScreen<Presenter: BaseVM, Item: BaseItem>(view: View, presenter: Presenter.Type, item: Item) {
         let viewController = view.controller(presenterType: presenter, item: item)
         if #available(iOS 13.0, *) {
@@ -132,7 +133,6 @@ class RouterManagerImpl: RouterManager {
 }
 
 extension UINavigationController {
-    
     func popToViewController(ofClass: AnyClass, animated: Bool = false) {
         if let vc = viewControllers.filter({$0.isKind(of: ofClass)}).last {
             popToViewController(vc, animated: animated)
@@ -145,5 +145,4 @@ extension UINavigationController {
             popToViewController(vc, animated: animated)
         }
     }
-    
 }
